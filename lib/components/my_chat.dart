@@ -17,7 +17,10 @@ class MyChat extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(time, style: TextStyle(fontSize: 12)),
+          Container(
+            child: Text(time, style: TextStyle(fontSize: 12)),
+            padding: EdgeInsets.only(top: 10),
+          ),
           SizedBox(width: 5),
           Flexible(
             child: Container(

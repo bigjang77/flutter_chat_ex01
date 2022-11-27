@@ -28,9 +28,17 @@ class _ChattingPageState extends State<ChattingPage> {
           backgroundColor: kPrimaryColor,
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: Text(
-              "Chat",
-              style: Theme.of(context).textTheme.headline6,
+            title: Row(
+              children: [
+                BackButton(
+                  color: Colors.black,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  "Chat",
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ],
             ),
             actions: [
               Icon(Icons.logout, size: 20, color: Colors.black),
@@ -51,28 +59,33 @@ class _ChattingPageState extends State<ChattingPage> {
                           time: "오후 8:10",
                           text: "오늘 10시에 자랭 돌립시다",
                         ),
+                        SizedBox(height: 20),
                         OtherChat(
                           num: 1,
                           name: "임꺽정",
                           time: "오후 8:15",
                           text: "10시는 너무 늦고 9시에 돌립시다",
                         ),
+                        SizedBox(height: 20),
                         MyChat(
                           text: "9시도 늦다 8시에 돌리자",
                           time: "오후 8:15",
                         ),
+                        SizedBox(height: 20),
                         OtherChat(
                           num: 2,
                           name: "김유미",
                           time: "오전 10:10",
                           text: "다들 포지션 뭘로 하실거에요?",
                         ),
+                        SizedBox(height: 20),
                         OtherChat(
                           num: 2,
                           name: "김유미",
                           time: "오전 10:10",
                           text: "저는 탑 할게요",
                         ),
+                        SizedBox(height: 20),
                         MyChat(
                           text: "그럼 저는 탑할게요",
                           time: "오후 2:15",
@@ -91,6 +104,10 @@ class _ChattingPageState extends State<ChattingPage> {
                     ChatIconButton(icon: Icon(FontAwesomeIcons.plusSquare)),
                     Expanded(
                       child: Container(
+                        decoration: BoxDecoration(
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                         child: TextField(
                           controller: _textController,
                           maxLines: 1,
